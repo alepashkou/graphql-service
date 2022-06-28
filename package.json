@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:prod": "tsc --build && node dist/index.js",
+    "start:dev": "nodemon --watch src --exec ts-node-esm src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,15 @@
   },
   "homepage": "https://github.com/alepashkou/graphql-service#readme",
   "devDependencies": {
+    "nodemon": "^2.0.18",
     "ts-loader": "^9.3.1",
-    "typescript": "^4.7.4",
-    "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0"
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0"
   }
 }
