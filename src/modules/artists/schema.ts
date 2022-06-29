@@ -1,10 +1,10 @@
 export const artistSchema = `
 type Query {
-  hello: String
+  artist(id: String): Artist
   artists: [Artist]
 }
 type Artist {
-  id: ID!
+  _id: ID!
   firstName: String
   secondName: String
   middleName: String

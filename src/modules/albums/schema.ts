@@ -1,6 +1,6 @@
 export const albumSchema = `
 type Album {
-    id: ID
+    _id: ID
     name: String
     released: Int
     artists: [Artist]
@@ -8,5 +8,9 @@ type Album {
     tracks: [Track]
     genres: [Genre]
     image: String
+  }
+  type Query {
+    album(id: String): Album
+    albums: [Album]
   }
 `;

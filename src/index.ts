@@ -1,7 +1,9 @@
 import 'dotenv/config';
-import { ApolloServer, AuthenticationError, gql } from 'apollo-server';
+import { ApolloServer, gql } from 'apollo-server';
 import { allSchemas } from './modules/allSchemas.js';
 import { artistsResolver } from './modules/artists/resolver.js';
+import { allServices } from './modules/allServices.js';
+import { albumResolver } from './modules/albums/resolver.js';
 
 const PORT: number = +process.env.PORT || 3000;
 
@@ -10,8 +12,8 @@ const typeDefs = gql`
 `;
 const resolvers = {
   Query: {
-    hello: () => 'books',
     ...artistsResolver,
+    ...albumResolver,
   },
 };
 const server = new ApolloServer({
@@ -21,8 +23,10 @@ const server = new ApolloServer({
   cache: 'bounded',
   context: ({ req }) => {
     const token = req.headers.authorization || '';
-    if (!token) throw new AuthenticationError('you must be logged in');
     return { token };
+  },
+  dataSources: () => {
+    return allServices;
   },
 });
 
