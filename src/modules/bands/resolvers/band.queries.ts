@@ -1,4 +1,4 @@
-export const bandsResolver = {
+export const bandsQueriesResolver = {
   bands: async (_, __, { dataSources }) => {
     return dataSources.bandsService.getAllBands();
   },

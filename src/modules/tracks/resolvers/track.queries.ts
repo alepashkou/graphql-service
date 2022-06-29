@@ -1,4 +1,4 @@
-export const trackResolver = {
+export const trackQueriesResolver = {
   tracks: async (_, __, { dataSources }) => {
     return dataSources.tracksService.getAllTracks();
   },
