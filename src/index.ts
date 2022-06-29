@@ -1,32 +1,31 @@
 import 'dotenv/config';
-import express from 'express';
-import { graphqlHTTP } from 'express-graphql';
-import { buildSchema, GraphQLSchema } from 'graphql';
-import { schemaQueries } from './modules/schemaQueries.js';
+import { ApolloServer, AuthenticationError, gql } from 'apollo-server';
 import { allSchemas } from './modules/allSchemas.js';
+import { artistsResolver } from './modules/artists/resolver.js';
 
 const PORT: number = +process.env.PORT || 3000;
 
-const schema: GraphQLSchema = buildSchema(`${allSchemas}${schemaQueries}`);
-
-const root = {
-  hello: () => 'Hello world!',
-  artists: () => [
-    { id: 1, firstName: 'John', secondName: 'Smith' },
-    { id: 2, firstName: 'John', secondName: 'Smith' },
-    { id: 3, firstName: 'John', secondName: 'Smith' },
-  ],
+const typeDefs = gql`
+  ${allSchemas}
+`;
+const resolvers = {
+  Query: {
+    hello: () => 'books',
+    ...artistsResolver,
+  },
 };
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  csrfPrevention: true,
+  cache: 'bounded',
+  context: ({ req }) => {
+    const token = req.headers.authorization || '';
+    if (!token) throw new AuthenticationError('you must be logged in');
+    return { token };
+  },
+});
 
-const app = express();
-
-app.use(
-  '/graphql',
-  graphqlHTTP({
-    schema: schema,
-    rootValue: root,
-    graphiql: true,
-  })
-);
-
-app.listen(PORT, () => console.log(`Now browse to localhost:${PORT}/graphql`));
+server.listen({ port: PORT }).then(({ url }) => {
+  console.log(`🚀  Server start at ${url}`);
+});
