@@ -1,8 +1,12 @@
 export const genreSchema = `
 type Genre {
-  id: ID!
+  _id: ID!
   name: String
   description: String
   country: String
   year: Int
+}
+type Query {
+  genre(id: String): Genre
+  genres: [Genre]
 }`;

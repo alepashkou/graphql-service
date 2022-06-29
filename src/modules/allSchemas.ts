@@ -5,6 +5,7 @@ import { genreSchema } from './genres/schema.js';
 import { favouriteSchema } from './favourites/schema.js';
 import { userSchema } from './users/schema.js';
 import { trackSchema } from './tracks/schema.js';
+import { jwtSchema } from './jwt/schema.js';
 
 export const allSchemas = `
 ${artistSchema}
@@ -14,4 +15,5 @@ ${genreSchema}
 ${favouriteSchema}
 ${userSchema}
 ${trackSchema}
+${jwtSchema}
 `;
