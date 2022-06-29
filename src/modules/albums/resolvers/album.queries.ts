@@ -1,4 +1,4 @@
-export const albumResolver = {
+export const albumQueriesResolver = {
   albums: async (_, __, { dataSources }) => {
     return dataSources.albumsService.getAllAlbums();
   },

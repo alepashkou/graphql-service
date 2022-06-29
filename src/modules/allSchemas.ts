@@ -1,5 +1,5 @@
-import { artistSchema } from './artists/schema.js';
-import { albumSchema } from './albums/schema.js';
+import { artistSchema } from './artists/artist.schema.js';
+import { albumSchema } from './albums/album.schema.js';
 import { bandSchema } from './bands/schema.js';
 import { genreSchema } from './genres/schema.js';
 import { favouriteSchema } from './favourites/schema.js';

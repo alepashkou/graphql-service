@@ -1,5 +1,5 @@
-import { AlbumService } from './albums/service.js';
-import { ArtistService } from './artists/service.js';
+import { AlbumService } from './albums/album.service.js';
+import { ArtistService } from './artists/artist.service.js';
 import { BandsService } from './bands/service.js';
 import { GenresService } from './genres/service.js';
 import { JwtService } from './jwt/service.js';

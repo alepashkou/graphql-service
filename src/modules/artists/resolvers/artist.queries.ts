@@ -1,4 +1,4 @@
-export const artistsResolver = {
+export const artistsQueriesResolver = {
   artists: async (_, __, { dataSources }) => {
     return dataSources.artistsService.getAllArtists();
   },
