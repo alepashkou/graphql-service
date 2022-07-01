@@ -3,6 +3,7 @@ import { ApolloServer, gql } from 'apollo-server';
 import { allSchemas } from './modules/allSchemas.js';
 import { allServices } from './modules/allServices.js';
 import { allQueries } from './modules/allQueries.js';
+import { allMutations } from './modules/allMutations.js';
 
 const PORT: number = +process.env.PORT || 3000;
 
@@ -12,6 +13,9 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     ...allQueries,
+  },
+  Mutation: {
+    ...allMutations,
   },
 };
 const server = new ApolloServer({

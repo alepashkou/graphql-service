@@ -8,9 +8,14 @@ type Album {
     tracks: [Track]
     genres: [Genre]
     image: String
-  }
-  type Query {
-    album(id: String!): Album
-    albums(limit: Int, offset: Int): [Album]
-  }
+}
+type Query {
+  album(id: String!): Album
+  albums(limit: Int, offset: Int): [Album]
+}
+type Mutation {
+  createAlbum(name: String!, released: Int, artistsIds: [String], bandsIds: [String], trackIds: [String], genresIds: [String]): Album
+  deleteAlbum(id: String!): DeleteResponse
+  updateAlbum(id: String!, name: String, released: Int, artistsIds: [String], bandsIds: [String], trackIds: [String], genresIds: [String]): Album 
+}
 `;
