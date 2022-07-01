@@ -6,8 +6,8 @@ export class TracksService extends RESTDataSource {
     this.baseURL = process.env.TRACKS_URL;
   }
 
-  async getAllTracks() {
-    const data = await this.get('');
+  async getAllTracks(limit = 5, offset = 0) {
+    const data = await this.get('', { limit: limit, offset: offset });
     return data.items;
   }
   async getTrack(id) {

@@ -6,8 +6,8 @@ export class BandsService extends RESTDataSource {
     this.baseURL = process.env.BANDS_URL;
   }
 
-  async getAllBands() {
-    const data = await this.get('');
+  async getAllBands(limit = 5, offset = 0) {
+    const data = await this.get('', { limit: limit, offset: offset });
     return data.items;
   }
   async getBand(id) {

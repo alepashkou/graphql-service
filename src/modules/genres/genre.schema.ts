@@ -8,5 +8,5 @@ type Genre {
 }
 type Query {
   genre(id: String!): Genre
-  genres: [Genre]
+  genres(limit: Int, offset: Int): [Genre]
 }`;

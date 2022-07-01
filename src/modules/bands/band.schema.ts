@@ -8,6 +8,6 @@ type Band {
 }
 type Query {
   band(id: String!): Band
-  bands: [Band]
+  bands(limit: Int, offset:Int): [Band]
 }
 `;

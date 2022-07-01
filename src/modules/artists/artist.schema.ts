@@ -12,5 +12,5 @@ type Artist {
 }
 type Query {
   artist(id: String!): Artist
-  artists: [Artist]
+  artists(limit: Int, offset: Int): [Artist]
 }`;

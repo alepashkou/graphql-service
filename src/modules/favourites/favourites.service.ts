@@ -12,7 +12,7 @@ export class FavouritesService extends RESTDataSource {
   }
   async favourites(token: String) {
     if (token) {
-      const data = await this.get('', {});
+      const data = await this.get('');
       return data;
     } else {
       return null;

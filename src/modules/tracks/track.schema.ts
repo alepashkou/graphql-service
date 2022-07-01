@@ -10,5 +10,5 @@ type Track {
 }
 type Query {
   track(id: String!): Track
-  tracks: [Track]
+  tracks(limit: Int, offset: Int): [Track]
 }`;
