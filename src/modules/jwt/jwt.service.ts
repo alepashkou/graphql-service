@@ -10,6 +10,6 @@ export class JwtService extends RESTDataSource {
       email,
       password,
     });
-    return data;
+    return data.jwt;
   }
 }

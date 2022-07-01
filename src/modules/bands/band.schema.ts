@@ -7,7 +7,7 @@ type Band {
   genres: String
 }
 type Query {
-  band(id: String): Band
+  band(id: String!): Band
   bands: [Band]
 }
 `;

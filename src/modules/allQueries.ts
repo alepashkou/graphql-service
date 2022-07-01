@@ -1,6 +1,7 @@
 import { albumQueriesResolver } from './albums/resolvers/album.queries.js';
 import { artistsQueriesResolver } from './artists/resolvers/artist.queries.js';
 import { bandsQueriesResolver } from './bands/resolvers/band.queries.js';
+import { favouritesQueriesResolver } from './favourites/resolvers/favourites.queries.js';
 import { genresQueriesResolver } from './genres/resolvers/genre.queries.js';
 import { jwtQueriesResolver } from './jwt/resolvers/jwt.queries.js';
 import { trackQueriesResolver } from './tracks/resolvers/track.queries.js';
@@ -14,4 +15,5 @@ export const allQueries = {
   ...jwtQueriesResolver,
   ...trackQueriesResolver,
   ...usersQueriesResolver,
+  ...favouritesQueriesResolver,
 };

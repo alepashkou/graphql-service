@@ -7,6 +7,6 @@ type Genre {
   year: Int
 }
 type Query {
-  genre(id: String): Genre
+  genre(id: String!): Genre
   genres: [Genre]
 }`;

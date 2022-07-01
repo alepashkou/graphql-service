@@ -10,7 +10,7 @@ type Album {
     image: String
   }
   type Query {
-    album(id: String): Album
+    album(id: String!): Album
     albums: [Album]
   }
 `;

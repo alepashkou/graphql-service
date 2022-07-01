@@ -1,6 +1,7 @@
 import { AlbumService } from './albums/album.service.js';
 import { ArtistService } from './artists/artist.service.js';
 import { BandsService } from './bands/band.service.js';
+import { FavouritesService } from './favourites/favourites.service.js';
 import { GenresService } from './genres/genre.service.js';
 import { JwtService } from './jwt/jwt.service.js';
 import { TracksService } from './tracks/track.service.js';
@@ -14,4 +15,5 @@ export const allServices = {
   tracksService: new TracksService(),
   usersService: new UsersService(),
   jwtService: new JwtService(),
+  favouritesService: new FavouritesService(),
 };

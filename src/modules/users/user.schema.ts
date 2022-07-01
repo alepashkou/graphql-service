@@ -8,5 +8,5 @@ type User {
   email: String!
 }
 type Query {
-  user(id: String): User
+  user(id: String!): User
 }`;

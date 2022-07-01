@@ -11,6 +11,6 @@ type Artist {
   instruments: String
 }
 type Query {
-  artist(id: String): Artist
+  artist(id: String!): Artist
   artists: [Artist]
 }`;

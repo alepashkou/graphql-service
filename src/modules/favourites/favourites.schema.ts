@@ -1,9 +1,12 @@
 export const favouriteSchema = `
 type Favourites {
-  id: ID!
+  _id: ID!
   userId: ID!
   bands: [ID]
   genres: [ID]
   artists: [ID]
   tracks: [ID]
+}
+type Query{
+  favourites: Favourites
 }`;

@@ -9,6 +9,6 @@ type Track {
   genres: [Genre]
 }
 type Query {
-  track(id: String): Track
+  track(id: String!): Track
   tracks: [Track]
 }`;
