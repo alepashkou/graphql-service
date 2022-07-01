@@ -14,8 +14,8 @@ type Query {
   albums(limit: Int, offset: Int): [Album]
 }
 type Mutation {
-  createAlbum(name: String!, released: Int, artistsIds: [String], bandsIds: [String], trackIds: [String], genresIds: [String]): Album
+  createAlbum(name: String!, released: Int, artistsIds: [String], bandsIds: [String], trackIds: [String], genresIds: [String], image: String): Album
   deleteAlbum(id: String!): DeleteResponse
-  updateAlbum(id: String!, name: String, released: Int, artistsIds: [String], bandsIds: [String], trackIds: [String], genresIds: [String]): Album 
+  updateAlbum(id: String!, name: String, released: Int, artistsIds: [String], bandsIds: [String], trackIds: [String], genresIds: [String], image: String): Album 
 }
 `;
