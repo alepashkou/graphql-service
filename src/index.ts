@@ -2,8 +2,8 @@ import 'dotenv/config';
 import { ApolloServer, gql } from 'apollo-server';
 import { allSchemas } from './modules/allSchemas.js';
 import { allServices } from './modules/allServices.js';
-import { allQueries } from './modules/allQueries.js';
-import { allMutations } from './modules/allMutations.js';
+
+import { allResolvers } from './modules/allResolvers.js';
 
 const PORT: number = +process.env.PORT || 3000;
 
@@ -11,12 +11,7 @@ const typeDefs = gql`
   ${allSchemas}
 `;
 const resolvers = {
-  Query: {
-    ...allQueries,
-  },
-  Mutation: {
-    ...allMutations,
-  },
+  ...allResolvers,
 };
 const server = new ApolloServer({
   typeDefs,

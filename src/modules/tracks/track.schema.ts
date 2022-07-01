@@ -2,7 +2,8 @@ export const trackSchema = `
 type Track {
   _id: ID!
   title: String
-  albums: String
+  album: Album
+  artists: [Artist]
   bands: [Band]
   duration: Int
   released: Int

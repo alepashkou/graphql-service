@@ -6,7 +6,6 @@ import { favouriteSchema } from './favourites/favourites.schema.js';
 import { userSchema } from './users/user.schema.js';
 import { trackSchema } from './tracks/track.schema.js';
 import { jwtSchema } from './jwt/jwt.schema.js';
-import { commonSchema } from './common/common.schema.js';
 
 export const allSchemas = `
 ${artistSchema}
@@ -17,5 +16,8 @@ ${favouriteSchema}
 ${userSchema}
 ${trackSchema}
 ${jwtSchema}
-${commonSchema}
+type DeleteResponse {
+    acknowledged: Boolean,
+    deletedCount: Int
+}
 `;
