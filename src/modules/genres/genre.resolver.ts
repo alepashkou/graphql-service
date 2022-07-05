@@ -7,4 +7,15 @@ export const genreResolver = {
       return dataSources.genresService.getGenre(id);
     },
   },
+  Mutation: {
+    createGenre: async (_, data, { dataSources }) => {
+      return dataSources.genresService.createGenre(data);
+    },
+    deleteGenre: async (_, { id }, { dataSources }) => {
+      return dataSources.genresService.deleteGenre(id);
+    },
+    updateGenre: async (_, data, { dataSources }) => {
+      return dataSources.genresService.updateGenre(data);
+    },
+  },
 };
