@@ -34,4 +34,7 @@ export const allResolvers = {
   Track: {
     ...trackResolver.Track,
   },
+  Favourites: {
+    ...favouritesResolver.Favourites,
+  },
 };
