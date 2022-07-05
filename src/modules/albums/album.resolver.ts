@@ -32,7 +32,7 @@ export const albumResolver = {
       return bands;
     },
     tracks(parent, _, { dataSources }) {
-      const tracks = parent.tracksIds.map((id) =>
+      const tracks = parent.trackIds.map((id) =>
         dataSources.tracksService.getTrack(id)
       );
       return tracks;

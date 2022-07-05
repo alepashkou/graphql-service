@@ -9,4 +9,7 @@ type Favourites {
 }
 type Query{
   favourites: Favourites
+}
+type Mutation{
+  addTrackToFavourites(trackId: ID!): Favourites
 }`;

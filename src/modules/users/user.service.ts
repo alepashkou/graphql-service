@@ -10,4 +10,8 @@ export class UsersService extends RESTDataSource {
     const data = await this.get(`/${id}`);
     return data;
   }
+  async register(data) {
+    const responce = await this.post('register', data);
+    return responce;
+  }
 }

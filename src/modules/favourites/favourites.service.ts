@@ -18,4 +18,11 @@ export class FavouritesService extends RESTDataSource {
       return null;
     }
   }
+  async addTrackToFavourites(trackId: String) {
+    const newData = await this.put('/add', {
+      type: 'tracks',
+      id: trackId,
+    });
+    return newData;
+  }
 }

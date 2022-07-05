@@ -7,6 +7,17 @@ export const trackResolver = {
       return dataSources.tracksService.getTrack(id);
     },
   },
+  Mutation: {
+    createTrack: async (_, data, { dataSources }) => {
+      return dataSources.tracksService.createTrack(data);
+    },
+    deleteTrack: async (_, { id }, { dataSources }) => {
+      return dataSources.tracksService.deleteTrack(id);
+    },
+    updateTrack: async (_, data, { dataSources }) => {
+      return dataSources.tracksService.updateTrack(data);
+    },
+  },
   Track: {
     album: async (parent, _, { dataSources }) => {
       const album = dataSources.albumsService.getAlbum(parent.albumId);

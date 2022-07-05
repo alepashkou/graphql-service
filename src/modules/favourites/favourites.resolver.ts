@@ -4,6 +4,11 @@ export const favouritesResolver = {
       return dataSources.favouritesService.favourites(token);
     },
   },
+  Mutation: {
+    addTrackToFavourites: async (_, { trackId }, { dataSources }) => {
+      return dataSources.favouritesService.addTrackToFavourites(trackId);
+    },
+  },
   Favourites: {
     artists(parent, _, { dataSources }) {
       const artists = parent.artistsIds.map((id) =>

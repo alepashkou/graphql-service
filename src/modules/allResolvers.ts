@@ -23,6 +23,9 @@ export const allResolvers = {
     ...artistResolver.Mutation,
     ...genreResolver.Mutation,
     ...bandResolver.Mutation,
+    ...userResolver.Mutation,
+    ...trackResolver.Mutation,
+    ...favouritesResolver.Mutation,
   },
   Artist: {
     ...artistResolver.Artist,
