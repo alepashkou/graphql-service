@@ -22,6 +22,7 @@ export const allResolvers = {
     ...albumResolver.Mutation,
     ...artistResolver.Mutation,
     ...genreResolver.Mutation,
+    ...bandResolver.Mutation,
   },
   Artist: {
     ...artistResolver.Artist,
