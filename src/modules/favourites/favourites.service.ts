@@ -25,4 +25,25 @@ export class FavouritesService extends RESTDataSource {
     });
     return newData;
   }
+  async addBandToFavourites(bandId: String) {
+    const newData = await this.put('/add', {
+      type: 'bands',
+      id: bandId,
+    });
+    return newData;
+  }
+  async addArtistToFavourites(artistId: String) {
+    const newData = await this.put('/add', {
+      type: 'artists',
+      id: artistId,
+    });
+    return newData;
+  }
+  async addGenreToFavourites(genreId: String) {
+    const newData = await this.put('/add', {
+      type: 'genres',
+      id: genreId,
+    });
+    return newData;
+  }
 }

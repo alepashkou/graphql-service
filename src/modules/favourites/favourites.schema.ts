@@ -12,4 +12,7 @@ type Query{
 }
 type Mutation{
   addTrackToFavourites(trackId: ID!): Favourites
+  addBandToFavourites(bandId: ID!): Favourites
+  addArtistToFavourites(artistId: ID!): Favourites
+  addGenreToFavourites(genreId: ID!): Favourites
 }`;

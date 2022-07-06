@@ -8,6 +8,15 @@ export const favouritesResolver = {
     addTrackToFavourites: async (_, { trackId }, { dataSources }) => {
       return dataSources.favouritesService.addTrackToFavourites(trackId);
     },
+    addBandToFavourites: async (_, { bandId }, { dataSources }) => {
+      return dataSources.favouritesService.addBandToFavourites(bandId);
+    },
+    addArtistToFavourites: async (_, { artistId }, { dataSources }) => {
+      return dataSources.favouritesService.addArtistToFavourites(artistId);
+    },
+    addGenreToFavourites: async (_, { genreId }, { dataSources }) => {
+      return dataSources.favouritesService.addGenreToFavourites(genreId);
+    },
   },
   Favourites: {
     artists(parent, _, { dataSources }) {
