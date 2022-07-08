@@ -17,6 +17,7 @@ npm run start:prod - to start production server
 ## Apollo Studio
 
 The server works on the address http://localhost:3000/, go to the address in the browser, there is a link to the Apollo Studio. It was testing the application.
+
 ![Apollo Studio](https://i.ibb.co/Chn4Frr/Screenshot-2.png)
 
 ## Authorization
