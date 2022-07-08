@@ -42,4 +42,7 @@ export const allResolvers = {
   Favourites: {
     ...favouritesResolver.Favourites,
   },
+  Member: {
+    ...bandResolver.Member,
+  },
 };

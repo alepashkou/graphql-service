@@ -19,7 +19,22 @@ export class BandsService extends RESTDataSource {
     return data;
   }
   async createBand(data) {
-    const response = await this.post('', data);
+    const reWitemembers = () => {
+      return data.members.map((member) => {
+        return {
+          artist: member.artistId,
+          instrument: member.instrument,
+          years: member.years,
+        };
+      });
+    };
+    const response = await this.post('', {
+      name: data.name,
+      origin: data.origin,
+      members: reWitemembers,
+      website: data.website,
+      genresIds: data.genresIds,
+    });
     return response;
   }
   async deleteBand(id) {

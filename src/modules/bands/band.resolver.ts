@@ -26,4 +26,10 @@ export const bandResolver = {
       return genres;
     },
   },
+  Member: {
+    artist: async (parent, _, { dataSources }) => {
+      const artist = await dataSources.artistsService.getArtist(parent.artist);
+      return artist;
+    },
+  },
 };
