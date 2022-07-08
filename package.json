@@ -5,7 +5,6 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "webpack",
     "start:prod": "tsc --build && node dist/index.js",
     "start:dev": "nodemon --watch src --exec ts-node-esm src/index.ts"
   },
